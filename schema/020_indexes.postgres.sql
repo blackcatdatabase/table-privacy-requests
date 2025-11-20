@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-map-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  privacy_requests
 CREATE INDEX IF NOT EXISTS idx_pr_user ON privacy_requests (user_id);

@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  privacy_requests
 -- Contract view for [privacy_requests]
@@ -13,7 +13,7 @@ SELECT
   meta
 FROM privacy_requests;
 
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  privacy_requests_status
 -- Privacy requests status

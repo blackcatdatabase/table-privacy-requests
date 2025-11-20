@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  privacy_requests
 -- Contract view for [privacy_requests]
@@ -13,7 +13,7 @@ SELECT
   meta
 FROM privacy_requests;
 
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  privacy_requests_status
 -- Privacy requests status
