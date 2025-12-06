@@ -1,6 +1,7 @@
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
+-- Auto-generated from schema-views-postgres.yaml (map@sha1:EDC13878AE5F346E7EAD2CF0A484FEB7E68F6CDD)
 -- engine: postgres
 -- table:  privacy_requests
+
 -- Contract view for [privacy_requests]
 CREATE OR REPLACE VIEW vw_privacy_requests AS
 SELECT
@@ -12,18 +13,3 @@ SELECT
   processed_at,
   meta
 FROM privacy_requests;
-
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
--- engine: postgres
--- table:  privacy_requests_status
--- Privacy requests status
-CREATE OR REPLACE VIEW vw_privacy_requests_status AS
-SELECT
-  type,
-  status,
-  COUNT(*) AS total,
-  MAX(processed_at) AS last_processed
-FROM privacy_requests
-GROUP BY type, status
-ORDER BY type, status;
-

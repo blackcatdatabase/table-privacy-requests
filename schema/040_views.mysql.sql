@@ -1,6 +1,7 @@
--- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
+-- Auto-generated from schema-views-mysql.yaml (map@sha1:A4E10261DACB7519F6FEA44ED77A92163429CA5E)
 -- engine: mysql
 -- table:  privacy_requests
+
 -- Contract view for [privacy_requests]
 CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_privacy_requests AS
 SELECT
@@ -12,18 +13,3 @@ SELECT
   processed_at,
   meta
 FROM privacy_requests;
-
--- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
--- engine: mysql
--- table:  privacy_requests_status
--- Privacy requests status
-CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_privacy_requests_status AS
-SELECT
-  type,
-  status,
-  COUNT(*) AS total,
-  MAX(processed_at) AS last_processed
-FROM privacy_requests
-GROUP BY type, status
-ORDER BY type, status;
-
