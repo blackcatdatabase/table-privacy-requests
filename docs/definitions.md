@@ -6,11 +6,11 @@ Data-subject privacy requests (access, erasure, portability, etc.).
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| meta | JSONB | YES |  | JSON blob with additional context. |
-| processed_at | TIMESTAMPTZ(6) | YES |  | When it was completed. |
-| requested_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | When the request was submitted. |
-| status | TEXT | NO | pending | Request status. (enum: pending, processing, done, failed, cancelled) |
-| type | TEXT | NO |  | Request type. (enum: access, erasure, rectify, restrict, portability) |
+| meta | JSON | YES |  | JSON blob with additional context. |
+| processed_at | DATETIME(6) | YES |  | When it was completed. |
+| requested_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | When the request was submitted. |
+| status | ENUM('pending','processing','done','failed','cancelled') | NO | pending | Request status. (enum: pending, processing, done, failed, cancelled) |
+| type | ENUM('access','erasure','rectify','restrict','portability') | NO |  | Request type. (enum: access, erasure, rectify, restrict, portability) |
 | user_id | BIGINT | YES |  | Subject user (FK users.id). |
 
 ## Engine Details
@@ -46,7 +46,7 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_privacy_requests | mysql | algorithm=MERGE, security=INVOKER | [packages\privacy-requests\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/privacy-requests/schema/040_views.mysql.sql) |
-| vw_privacy_requests_status | mysql | algorithm=TEMPTABLE, security=INVOKER | [packages\privacy-requests\schema\040_views_joins.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/privacy-requests/schema/040_views_joins.mysql.sql) |
-| vw_privacy_requests | postgres |  | [packages\privacy-requests\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/privacy-requests/schema/040_views.postgres.sql) |
-| vw_privacy_requests_status | postgres |  | [packages\privacy-requests\schema\040_views_joins.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/privacy-requests/schema/040_views_joins.postgres.sql) |
+| vw_privacy_requests | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_privacy_requests_status | mysql | algorithm=TEMPTABLE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
+| vw_privacy_requests | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_privacy_requests_status | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |
