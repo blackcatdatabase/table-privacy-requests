@@ -96,9 +96,9 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `type` – enum
-- `status` – default=pending, enum
 - `requested_at` – default=CURRENT_TIMESTAMP(6)
+- `status` – default=pending, enum
+- `type` – enum
 
 ## Schema Files
 | File | Engine |
