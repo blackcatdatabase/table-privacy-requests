@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "privacy_requests": {
+      "columns": {
+        "id": {
+          "strategy": "passthrough"
+        },
+        "meta": {
+          "strategy": "passthrough"
+        },
+        "processed_at": {
+          "strategy": "passthrough"
+        },
+        "requested_at": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        },
+        "type": {
+          "strategy": "passthrough"
+        },
+        "user_id": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
