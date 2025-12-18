@@ -94,7 +94,7 @@ SQL;
         $hasView  = SchemaIntrospector::hasView($db, $d, $view);
 
         // Quick index/FK check - generator injects names (case-sensitive per DB)
-        $expectedIdx = [ 'idx_pr_type_status', 'idx_pr_user' ];
+        $expectedIdx = [ 'idx_privacy_requests_type_status', 'idx_privacy_requests_user' ];
         if ($d->isMysql()) {
             // Drop PG-only index naming patterns (e.g., GIN/GiST)
             $expectedIdx = array_values(array_filter(
@@ -102,7 +102,7 @@ SQL;
                 static fn(string $n): bool => !str_starts_with($n, 'gin_') && !str_starts_with($n, 'gist_')
             ));
         }
-        $expectedFk  = [ 'fk_pr_user' ];
+        $expectedFk  = [ 'fk_privacy_requests_user' ];
 
         $haveIdx = $hasTable ? SchemaIntrospector::listIndexes($db, $d, $table)     : [];
         $haveFk  = $hasTable ? SchemaIntrospector::listForeignKeys($db, $d, $table) : [];
@@ -127,8 +127,8 @@ SQL;
             'columns'     => Definitions::columns(),
             'version'     => $this->version(),
             'dialects'    => [ 'mysql', 'postgres' ],
-            'indexes'     => [ 'idx_pr_type_status', 'idx_pr_user' ],
-            'foreignKeys' => [ 'fk_pr_user' ],
+            'indexes'     => [ 'idx_privacy_requests_type_status', 'idx_privacy_requests_user' ],
+            'foreignKeys' => [ 'fk_privacy_requests_user' ],
         ];
     }
 }
