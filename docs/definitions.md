@@ -3,15 +3,15 @@
 Data-subject privacy requests (access, erasure, portability, etc.).
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| user_id | BIGINT | YES |  | Subject user (FK users.id). |
-| type | mysql: ENUM('access','erasure','rectify','restrict','portability') / postgres: TEXT | NO |  | Request type. (enum: access, erasure, rectify, restrict, portability) |
-| status | mysql: ENUM('pending','processing','done','failed','cancelled') / postgres: TEXT | NO | pending | Request status. (enum: pending, processing, done, failed, cancelled) |
-| requested_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | When the request was submitted. |
-| processed_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | When it was completed. |
-| meta | mysql: JSON / postgres: JSONB | YES |  | JSON blob with additional context. |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| user_id | BIGINT | YES |  | Subject user (FK users.id). |  |
+| type | mysql: ENUM('access','erasure','rectify','restrict','portability') / postgres: TEXT | NO |  | Request type. (enum: access, erasure, rectify, restrict, portability) |  |
+| status | mysql: ENUM('pending','processing','done','failed','cancelled') / postgres: TEXT | NO | pending | Request status. (enum: pending, processing, done, failed, cancelled) |  |
+| requested_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | When the request was submitted. |  |
+| processed_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | When it was completed. |  |
+| meta | mysql: JSON / postgres: JSONB | YES |  | JSON blob with additional context. |  |
 
 ## Engine Details
 
