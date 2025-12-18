@@ -20,26 +20,26 @@ Data-subject privacy requests (access, erasure, portability, etc.).
 Indexes:
 | Name | Columns | SQL |
 | --- | --- | --- |
-| idx_pr_type_status | type,status | INDEX idx_pr_type_status (`type`, status) |
-| idx_pr_user | user_id | INDEX idx_pr_user        (user_id) |
+| idx_privacy_requests_type_status | type,status | INDEX idx_privacy_requests_type_status (`type`, status) |
+| idx_privacy_requests_user | user_id | INDEX idx_privacy_requests_user        (user_id) |
 
 Foreign keys:
 | Name | Columns | References | Actions |
 | --- | --- | --- | --- |
-| fk_pr_user | user_id | users(id) | ON DELETE SET |
+| fk_privacy_requests_user | user_id | users(id) | ON DELETE SET |
 
 ### postgres
 
 Indexes:
 | Name | Columns | SQL |
 | --- | --- | --- |
-| idx_pr_type_status | type,status | CREATE INDEX IF NOT EXISTS idx_pr_type_status ON privacy_requests (type, status) |
-| idx_pr_user | user_id | CREATE INDEX IF NOT EXISTS idx_pr_user ON privacy_requests (user_id) |
+| idx_privacy_requests_type_status | type,status | CREATE INDEX IF NOT EXISTS idx_privacy_requests_type_status ON privacy_requests (type, status) |
+| idx_privacy_requests_user | user_id | CREATE INDEX IF NOT EXISTS idx_privacy_requests_user ON privacy_requests (user_id) |
 
 Foreign keys:
 | Name | Columns | References | Actions |
 | --- | --- | --- | --- |
-| fk_pr_user | user_id | users(id) | ON DELETE SET |
+| fk_privacy_requests_user | user_id | users(id) | ON DELETE SET |
 
 ## Engine differences
 
